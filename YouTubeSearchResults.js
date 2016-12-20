@@ -8,7 +8,7 @@ import {
   ListView,
   Text
 } from 'react-native'
-// import VideoView from './VideoView'
+import VideoView from './VideoView'
 
 const styles = StyleSheet.create({
   thumb: {
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#dddddd'
   },
   title: {
-    fontSize: 15,
+    fontSize: 11,
     fontWeight: 'bold',
     color: '#48BBEC'
   },
@@ -79,7 +79,7 @@ class YouTubeSearchResults extends Component {
   }
   render() {
     return (
-      <View>
+      <View style={{flex: 1}}>
         <ListView
           dataSource={this.state.dataSource}
           renderRow={this.renderRow.bind(this)}/>
