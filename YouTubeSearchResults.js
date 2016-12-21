@@ -57,7 +57,6 @@ class YouTubeSearchResults extends Component {
     })
   }
   renderRow(rowData, sectionID, rowID) {
-    console.log("ROWDATA: ", rowData)
     const title = rowData.snippet.title
     const description = rowData.snippet.description
     const thumbnail = rowData.snippet.thumbnails.medium.url

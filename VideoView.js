@@ -5,9 +5,10 @@ import {
   StyleSheet,
   Image,
   View,
-  Text
+  Text,
+  WebView
 } from 'react-native'
-import YouTube from 'react-native-youtube'
+// import YouTube from 'react-native-youtube'
 
 const styles = StyleSheet.create({
   container: {
@@ -51,27 +52,15 @@ const styles = StyleSheet.create({
 
 class VideoView extends Component {
   render() {
-    console.log("URL: ", this.props.video[0].id.videoId)
     const videoID = this.props.video[0].id.videoId
+    const URI = 'https://www.youtube.com/embed/' + videoID + '?rel=0&autoplay=0&showinfo=0&controls=0'
+    console.log("PROPS ", this.props.video[0])
+    console.log("URL ", URI)
     return (
-      <View style={styles.container}>
-      <YouTube
-        ref="youtubePlayer"
-        videoId="KVZ-P-ZI6W4" // The YouTube video ID
-        play={true}           // control playback of video with true/false
-        hidden={false}        // control visiblity of the entire view
-        playsInline={true}    // control whether the video should play inline
-        loop={false}          // control whether the video should loop when ended
-
-        onReady={(e)=>{this.setState({isReady: true})}}
-        onChangeState={(e)=>{this.setState({status: e.state})}}
-        onChangeQuality={(e)=>{this.setState({quality: e.quality})}}
-        onError={(e)=>{this.setState({error: e.error})}}
-        onProgress={(e)=>{this.setState({currentTime: e.currentTime, duration: e.duration})}}
-
-        style={{alignSelf: 'stretch', height: 300, backgroundColor: 'black', marginVertical: 10}}
-      />
-      </View>
+      <WebView
+        style={{flex:1}}
+        javaScriptEnabled={true}
+        source={{uri: URI}} />
     )
   }
 }
