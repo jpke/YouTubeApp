@@ -54,6 +54,7 @@ class VideoView extends Component {
   render() {
     const videoID = this.props.video[0].id.videoId
     const URI = 'https://www.youtube.com/embed/' + videoID + '?rel=0&autoplay=0&showinfo=0&controls=0'
+    // const URI = 'https://www.youtube.com/embed?listType=search&list=cats'
     console.log("PROPS ", this.props.video[0])
     console.log("URL ", URI)
     return (

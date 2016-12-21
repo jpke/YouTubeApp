@@ -35,6 +35,11 @@ const styles = StyleSheet.create({
   rowContainer: {
     flexDirection: 'row',
     padding: 5
+  },
+  author: {
+    fontSize: 8,
+    color: '#656565',
+    fontWeight: 'bold'
   }
 })
 
@@ -60,6 +65,8 @@ class YouTubeSearchResults extends Component {
     const title = rowData.snippet.title
     const description = rowData.snippet.description
     const thumbnail = rowData.snippet.thumbnails.medium.url
+    console.log("row", rowData)
+    const author = rowData.snippet.channelTitle
     return (
       <TouchableHighlight onPress={() => this.rowPressed(rowData.etag)}
         underlayColor='#dddddd'>
@@ -68,6 +75,7 @@ class YouTubeSearchResults extends Component {
             <Image style={styles.thumb} source={{uri: rowData.snippet.thumbnails.medium.url}}/>
             <View style={styles.textContainer}>
               <Text style={styles.title}>{title}</Text>
+              <Text style={styles.author}>By {author}</Text>
               <Text style={styles.description}>{description}</Text>
             </View>
           </View>
