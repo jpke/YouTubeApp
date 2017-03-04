@@ -36,3 +36,5 @@ const styles = StyleSheet.create({
 });
 
 AppRegistry.registerComponent('YouTubeApp', () => YouTubeApp);
+
+// tar -czf ~/Documents/app.tar.gz ~/Library/Developer/Xcode/DerivedData/YouTubeApp-fvibrxepeinqtjbolnenchbrwjxz/Build/Products/Release-iphonesimulator/*.app

@@ -92,7 +92,7 @@ class YouTubeSearch extends Component {
     this.setState({searchString: event.nativeEvent.text})
   }
   _executeQuery(query) {
-    console.log("QUERY: ", query)
+    // console.log("QUERY: ", query)
     this.setState({isLoading: true})
     fetch(query)
     .then(res => res.json())
